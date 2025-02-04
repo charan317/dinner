@@ -33,6 +33,7 @@
         .yes {
             background-color: #28a745;
             color: white;
+            transition: all 0.3s ease;
         }
         .no {
             background-color: #dc3545;
@@ -52,7 +53,7 @@
         </div>
         <div class="buttons">
             <button class="btn yes" onclick="showLove()">Yes</button>
-            <button class="btn no" onmouseover="moveButton(this)">No</button>
+            <button class="btn no" onmouseover="moveButton(this)" onclick="increaseYesButton()">No</button>
         </div>
     </div>
 
@@ -66,6 +67,13 @@
             let y = Math.random() * (window.innerHeight - 50);
             button.style.left = `${x}px`;
             button.style.top = `${y}px`;
+        }
+
+        function increaseYesButton() {
+            let yesButton = document.querySelector(".yes");
+            let currentSize = parseFloat(window.getComputedStyle(yesButton).fontSize);
+            yesButton.style.fontSize = `${currentSize + 5}px`;
+            yesButton.style.padding = `${(currentSize + 5) / 2}px ${(currentSize + 5)}px`;
         }
     </script>
 </body>
