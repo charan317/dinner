@@ -53,7 +53,7 @@
         </div>
         <div class="buttons">
             <button class="btn yes" onclick="showLove()">Yes</button>
-            <button class="btn no" onmouseover="moveButton(this)" onclick="increaseYesButton()">No</button>
+            <button class="btn no" onclick="moveButtonAndIncreaseYes()">No</button>
         </div>
     </div>
 
@@ -62,15 +62,17 @@
             alert("Yay! I knew you'd say yes! ❤️🥰");
         }
 
-        function moveButton(button) {
+        function moveButtonAndIncreaseYes() {
+            let noButton = document.querySelector(".no");
+            let yesButton = document.querySelector(".yes");
+            
+            // Move No button to a random position
             let x = Math.random() * (window.innerWidth - 100);
             let y = Math.random() * (window.innerHeight - 50);
-            button.style.left = `${x}px`;
-            button.style.top = `${y}px`;
-        }
-
-        function increaseYesButton() {
-            let yesButton = document.querySelector(".yes");
+            noButton.style.left = `${x}px`;
+            noButton.style.top = `${y}px`;
+            
+            // Increase Yes button size
             let currentSize = parseFloat(window.getComputedStyle(yesButton).fontSize);
             yesButton.style.fontSize = `${currentSize + 5}px`;
             yesButton.style.padding = `${(currentSize + 5) / 2}px ${(currentSize + 5)}px`;
