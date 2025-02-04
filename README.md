@@ -1,7 +1,7 @@
 
 # Will you have dinner with me?
 
-Demo : https://charan317.github.io/will-you-have-dinner-with-me
+Demo : https://charan317.github.io/dinner/
 
 This is a fun project for valentines day to bring smile on face of your special person!!
 
